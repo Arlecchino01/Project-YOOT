@@ -8,7 +8,7 @@ public class GameManager {
 
     public GameManager() {
         this.players = new ArrayList<>();
-        this.board = new Board(20); // 20칸짜리 직선 보드
+        this.board = new Board(2); // 20칸짜리 직선 보드
         this.currentPlayerIndex = 0;
         this.scanner = new Scanner(System.in);
     }
