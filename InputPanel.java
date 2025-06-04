@@ -1,41 +1,46 @@
 import javax.swing.*;
 import java.awt.*;
 
-public class InputPanel extends JPanel {
-    private JTextField textField;
+public class InputPanel extends JPanel implements InputHandler{
+    private JTextField inputField;
     private JButton submitButton;
-    private InputCallback currentCallback;
-    private OutputWriter writer;
+    private InputEngine inputEngine;
 
-    public InputPanel() {
-        // 패널 레이아웃 설정
+    public InputPanel(){
         setLayout(new FlowLayout());
 
-        // 텍스트 필드 만들기
-        JLabel label = new JLabel("입력: ");
-        textField = new JTextField(10);
-        submitButton = new JButton("확인");
+        inputField = new JTextField(20);
+        submitButton = new JButton("제출");
 
-        add(label);
-        add(textField);
+        add(new JLabel("입력: "));
+        add(inputField);
         add(submitButton);
-
-        submitButton.addActionListener(e -> {
-            if (currentCallback != null) {
-                String value = textField.getText().trim();
-                textField.setText("");
-                currentCallback.onInput(value);
-                currentCallback = null;
-            }
-        });
     }
 
-    public String getInput() {
-        return textField.getText();
+    public JTextField getInputField() {
+        return inputField;
     }
 
+    public JButton getSubmitButton() {
+        return submitButton;
+    }
 
-    public void requestInput(InputCallback callback) {
-        this.currentCallback = callback;
+    public String getInputText() {
+        return inputField.getText();
+    }
+
+    
+
+    public void clearInput() {
+        inputField.setText("");
+    }
+
+    public void setInputEngine(InputEngine inputEngine){
+        this.inputEngine = inputEngine;
+    }
+
+    @Override
+    public void handle(String input){
+        inputEngine.handleInput(input);
     }
 }

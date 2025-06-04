@@ -12,4 +12,8 @@ class Piece {
     public void setCurrentTile(Tile tile) {
         this.currentTile = tile;
     }
+
+    public void testing(){
+        System.out.println("yes i am here");
+    }
 }

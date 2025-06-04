@@ -1,13 +1,23 @@
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class Main {
     public static void main(String[] args) {
+
+        int key = 2;
+
+        switch (key) {
+            case 1:
+                System.out.println("ConsoleApp in progress");
+                ConsoleApp consoleApp = new ConsoleApp();
+                break;
+
+            case 2:
+                System.out.println("SwingAppUI in progress");
+                SwingAppUI swingAppUI = new SwingAppUI();
+                break;
         
-        UI a = new UI(); 
+            default:
+                break;
+        }
+
+
     }
-    
 }
-    

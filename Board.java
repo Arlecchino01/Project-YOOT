@@ -7,11 +7,14 @@ public class Board {
     List<BoardEdge> diagonalsToCenter = new ArrayList<>();
     List<BoardEdge> diagonalsFromCenter = new ArrayList<>();
     int indexFromCenterTo;
+    Integer sideNum;
+    String boardName; //
 
     public Board(int sides) {
         origin = createTile();
         Tile prev = origin;
         origin.isOrigin = true;
+        this.sideNum = sides;
         
 
         for (int i = 0; i < sides-1; i++) {
@@ -53,6 +56,10 @@ public class Board {
         return t;
     }
 
+    public Tile getOrigin(){
+        return this.origin;
+    }
+
     public List<BoardEdge> getEdges() {
         return edges;
     }
@@ -69,8 +76,14 @@ public class Board {
         return diagonalsFromCenter;
     }
 
-    
+    public int getSideNum(){
+        return sideNum;
+    }
 
-
-
+    public String getBoardName(){
+        return boardName;
+    }
+    public void setBoardName(String name){
+        this.boardName = name;
+    }
 }
