@@ -2,7 +2,7 @@ import java.util.*;
 
 import javax.swing.SwingUtilities;
 
-import YutPanel.YutPanelCallBack;
+
 
 public class YutEngine {
     private CentralEngine central;
@@ -231,7 +231,7 @@ public class YutEngine {
         yut.throwYut();
     }
 
-    public void start_Game(){
+    /*public void start_Game(){
         yutPanel.setYutCallBack(new YutPanel().YutPanelCallback() {
             @Override
             public void 
@@ -252,7 +252,7 @@ public class YutEngine {
 
             }
         });
-    }
+    }*/
     //================ 필요한 함수들 ================
 
     public void setCentralEngine(CentralEngine centralEngine){
